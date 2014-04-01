@@ -1,0 +1,45 @@
+* Ruta por defecto a lgbashlib: /usr/local/lgbashlib
+
+
+
+* Scripts: exec_script.sh
+* Funciones:
+si pertenecen a lgbashlib:
+	__isDefined
+sino
+	isDefined
+fin
+
+* Variables globales:
+Siempre se declaran con el tipo (-a array, -i integer)
+si pertenecen a lgbashlib:
+	declare __VariableGlobal
+sino
+	declare VariableGlobal
+fin
+
+* Variables locales
+Siempre se declaran con el tipo (-a array, -i integer)
+si pertenecen a lgbashlib:
+	__variableLocal
+sino
+	variableLocal
+fin
+
+* Variables de configuracion en ficheros de configuración:
+No se declaran con el tipo
+si pertenecen a lgbashlib
+	__cfg_parametroConfig
+sino
+	cfg_parametroConfig
+fin
+
+* Carga en un script:
+APP_DIR=/usr/local/miapp
+LGBASH_DIR=/usr/local/lgbashlib
+. $LGBASH_DIR/bin/bootstrap.sh
+
+__loadConfig $APP_DIR/etc/fichero.cfg
+__include $APP_DIR/include/milib.inc.sh
+
+
